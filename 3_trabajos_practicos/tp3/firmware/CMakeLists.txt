@@ -37,6 +37,7 @@ pico_sdk_init()
 # Add external FreeRTOS library/ helper pwm generator library/ lcd libray
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../freertos ${CMAKE_BINARY_DIR}/freertos)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../helper ${CMAKE_BINARY_DIR}/helper)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../lcd ${CMAKE_BINARY_DIR}/lcd)
 
 add_executable(firmware firmware.c )
 
@@ -52,6 +53,7 @@ target_link_libraries(firmware
         pico_stdlib
         freertos
         helper
+        lcd
         hardware_adc
         )
 
